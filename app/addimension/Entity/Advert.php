@@ -81,7 +81,7 @@ class Advert
         $this->uriAction = $uriAction;
     }
 
-    
+
 
     /**
      * @return mixed
