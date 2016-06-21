@@ -16,7 +16,7 @@ return [
         'doctrine' => [
             'meta' => [
                 'entity_path' => [
-                    __DIR__ . '/../app/src/addimension/entity'
+                    __DIR__ . '/../app/addimension/entity'
                 ],
                 'auto_generate_proxies' => true,
                 'proxy_dir' =>  __DIR__.'/../cache/proxies',
