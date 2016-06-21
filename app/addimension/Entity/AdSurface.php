@@ -1,6 +1,6 @@
 <?php
 
-namespace AdDimension\Entity;
+namespace Addimension\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -27,7 +27,7 @@ class AdSurface
     private $dimY;
 
     /**
-     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\ManyToOne(targetEntity="AdDimension\Entity\User")
      * @ORM\JoinColumn(name="publisher_id", referencedColumnName="id")
      */
     private $publisher_id;

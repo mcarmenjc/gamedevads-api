@@ -19,7 +19,7 @@ class AdSurfaceController
 
     public function fetch($request, $response, $args) {
 
-        $adSurfaces = $this->em->getRepository('AdDimension/Entity/AdSurfsace')->findAll();
+        $adSurfaces = $this->em->getRepository('AdDimension\Entity\AdSurface')->findAll();
         return  $response->withJSON(array($adSurfaces));
     }
 

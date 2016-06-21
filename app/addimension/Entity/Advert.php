@@ -26,6 +26,16 @@ class Advert
     private $dimY;
 
     /**
+     * @ORM\Column(type="string", length=500)
+     */
+    private $uriImage;
+
+    /**
+     * @ORM\Column(type="string", length=500)
+     */
+    private $uriAction;
+
+    /**
      * @ORM\ManyToOne(targetEntity="User")
      * @ORM\JoinColumn(name="advertiser_id", referencedColumnName="id")
      */
@@ -38,6 +48,40 @@ class Advert
     {
         return $this->id;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getUriImage()
+    {
+        return $this->uriImage;
+    }
+
+    /**
+     * @param mixed $uriImage
+     */
+    public function setUriImage($uriImage)
+    {
+        $this->uriImage = $uriImage;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUriAction()
+    {
+        return $this->uriAction;
+    }
+
+    /**
+     * @param mixed $uriAction
+     */
+    public function setUriAction($uriAction)
+    {
+        $this->uriAction = $uriAction;
+    }
+
+    
 
     /**
      * @return mixed
