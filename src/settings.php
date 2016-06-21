@@ -16,7 +16,7 @@ return [
         'doctrine' => [
             'meta' => [
                 'entity_path' => [
-                    'app/src/Entity'
+                    __DIR__ . '/../app/src/addimension/entity'
                 ],
                 'auto_generate_proxies' => true,
                 'proxy_dir' =>  __DIR__.'/../cache/proxies',
@@ -25,9 +25,9 @@ return [
             'connection' => [
                 'driver'   => 'pdo_mysql',
                 'host'     => 'localhost',
-                'dbname'   => 'your-db',
-                'user'     => 'your-user-name',
-                'password' => 'your-password',
+                'dbname'   => 'addimension',
+                'user'     => 'root',
+                'password' => 'root',
             ]
         ]
     ]
