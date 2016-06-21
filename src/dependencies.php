@@ -18,8 +18,11 @@ $container['logger'] = function ($c) {
     return $logger;
 };
 
+
 $container['em'] = function ($c) {
     $settings = $c->get('settings');
+    var_dump($settings['doctrine']['meta']['entity_path']);
+    die();
     $config = \Doctrine\ORM\Tools\Setup::createAnnotationMetadataConfiguration(
         $settings['doctrine']['meta']['entity_path'],
         $settings['doctrine']['meta']['auto_generate_proxies'],
@@ -29,5 +32,7 @@ $container['em'] = function ($c) {
     );
     return \Doctrine\ORM\EntityManager::create($settings['doctrine']['connection'], $config);
 };
+
+
 
 

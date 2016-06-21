@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Addimension\Entity;
+namespace AdDimension\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 

@@ -1,7 +1,7 @@
 <?php
 // Routes
 
-$app->get('/[{name}]', function ($request, $response, $args) {
+$app->get('/', function ($request, $response, $args) {
     // Sample log message
     $this->logger->info("Slim-Skeleton '/' route");
 
@@ -12,4 +12,4 @@ $app->get('/[{name}]', function ($request, $response, $args) {
 });
 
 
-$app->get('/api/photos', 'App\Action\PhotoAction:fetch');
+$app->get('/api/adsurfaces', 'AdDimension\Controller\AdSurfaceController:fetch');

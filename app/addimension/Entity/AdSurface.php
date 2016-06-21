@@ -1,12 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: piero
- * Date: 21/06/16
- * Time: 12:30
- */
 
-namespace App\Addimension\Entity;
+namespace AdDimension\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
