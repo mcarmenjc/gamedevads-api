@@ -15,22 +15,23 @@ class AdSurface
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    public $id;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $dimX;
+    public $dimX;
+
     /**
      * @ORM\Column(type="integer")
      */
-    private $dimY;
+    public $dimY;
 
     /**
      * @ORM\ManyToOne(targetEntity="AdDimension\Entity\User")
      * @ORM\JoinColumn(name="publisher_id", referencedColumnName="id")
      */
-    private $publisher_id;
+    protected $publisher_id;
 
     /**
      * @return mixed

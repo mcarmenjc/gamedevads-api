@@ -28,7 +28,7 @@ class AdSurfaceController
      */
     public function fetch($request, $response, $args) {
         $adSurfaces = $this->em->getRepository('AdDimension\Entity\AdSurface')->findAll();
-        return  $response->withJSON(array($adSurfaces));
+        return  $response->withJSON($adSurfaces);
     }
 
     /**
@@ -38,11 +38,30 @@ class AdSurfaceController
      * @return mixed
      */
     public function fetchOne($request, $response, $args) {
-        $photo = $this->em->getRepository('AdDimension\Entity\AdSurface')->findBy(array('id' => $args['id']));
-        if ($photo) {
-            return $response->withJSON($photo->getArrayCopy());
+        $adSurfaces = $this->em->getRepository('AdDimension\Entity\AdSurface')->findBy(array('id' => $args['id']));
+        if ($adSurfaces) {
+            return $response->withJSON($adSurfaces);
         }
-        return $response->withStatus(404, 'No photo found with slug '.$args['id']);
+        return $response->withStatus(404, 'No AdSurface found with id '.$args['id']);
+    }
+
+    /**
+     * @param Request $request
+     * @param Response $response
+     * @param array $args
+     * @return mixed
+     */
+    public function findAdvert($request, $response, $args) {
+        /** @var  \AdDimension\Entity\AdSurface $adSurfaces */
+        $adSurfaces = $this->em->getRepository('AdDimension\Entity\AdSurface')->findBy(array('id' => $args['id']))[0];
+
+        $adverts = $this->em->getRepository('AdDimension\Entity\Advert')->findby(array('dimX'=> $adSurfaces->getDimX(), 'dimY'=>$adSurfaces->getDimY()) );
+
+        if ($adverts) {
+            $num = rand(0, count($adverts)-1);
+            return $response->withJSON($adverts[$num]);
+        }
+        return $response->withStatus(404, 'No Advert for this AdSurface '.$args['id']);
     }
 
 }

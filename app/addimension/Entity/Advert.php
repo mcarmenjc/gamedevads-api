@@ -14,32 +14,33 @@ class Advert
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    public $id;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $dimX;
+    public $dimX;
+
     /**
      * @ORM\Column(type="integer")
      */
-    private $dimY;
+    public $dimY;
 
     /**
      * @ORM\Column(type="string", length=500)
      */
-    private $uriImage;
+    public $uriImage;
 
     /**
      * @ORM\Column(type="string", length=500)
      */
-    private $uriAction;
+    public $uriAction;
 
     /**
      * @ORM\ManyToOne(targetEntity="User")
      * @ORM\JoinColumn(name="advertiser_id", referencedColumnName="id")
      */
-    private $advertiser_id;
+    protected $advertiser_id;
 
     /**
      * @return mixed

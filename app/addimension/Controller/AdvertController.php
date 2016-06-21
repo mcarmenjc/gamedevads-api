@@ -28,7 +28,7 @@ class AdvertController
      */
     public function fetch($request, $response, $args) {
         $adSurfaces = $this->em->getRepository('AdDimension\Entity\Advert')->findAll();
-        return  $response->withJSON(array($adSurfaces));
+        return  $response->withJSON($adSurfaces);
     }
 
     /**
@@ -40,7 +40,7 @@ class AdvertController
     public function fetchOne($request, $response, $args) {
         $advert = $this->em->getRepository('AdDimension\Entity\Advert')->findBy(array('id' => $args['id']));
         if ($advert) {
-            return $response->withJSON($advert->getArrayCopy());
+            return $response->withJSON($advert);
         }
         return $response->withStatus(404, 'No photo found with slug '.$args['id']);
     }

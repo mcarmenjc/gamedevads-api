@@ -15,22 +15,22 @@ class User
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    public $id;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $name;
+    public $name;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $email;
+    public $email;
 
     /**
         * @ORM\Column(type="string", length=100)
     */
-    private $type;
+    public $type;
 
 
     /**
