@@ -2,29 +2,34 @@
 
 namespace App\Addimension\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
- * User
+ * @ORM\Entity
+ * @ORM\Table(name="user")
  */
 class User
 {
     /**
-     * @var integer
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
-     * @var string
+     * @ORM\Column(type="string", length=100)
      */
     private $name;
 
     /**
-     * @var string
+     * @ORM\Column(type="string", length=100)
      */
     private $email;
 
     /**
-     * @var integer
-     */
+        * @ORM\Column(type="string", length=100)
+    */
     private $type;
 
 
