@@ -7,7 +7,7 @@ use Slim\Container;
 use Slim\Http\Request;
 use Slim\Http\Response;
 
-class AdSurfaceController
+class AdvertController
 {
     /**
      * @var EntityManager
@@ -27,7 +27,7 @@ class AdSurfaceController
      * @return mixed
      */
     public function fetch($request, $response, $args) {
-        $adSurfaces = $this->em->getRepository('AdDimension\Entity\AdSurface')->findAll();
+        $adSurfaces = $this->em->getRepository('AdDimension\Entity\Advert')->findAll();
         return  $response->withJSON(array($adSurfaces));
     }
 
@@ -38,11 +38,11 @@ class AdSurfaceController
      * @return mixed
      */
     public function fetchOne($request, $response, $args) {
-        $photo = $this->em->getRepository('AdDimension\Entity\AdSurface')->findBy(array('id' => $args['id']));
-        if ($photo) {
-            return $response->withJSON($photo->getArrayCopy());
+        $advert = $this->em->getRepository('AdDimension\Entity\Advert')->findBy(array('id' => $args['id']));
+        if ($advert) {
+            return $response->withJSON($advert->getArrayCopy());
         }
         return $response->withStatus(404, 'No photo found with slug '.$args['id']);
     }
-
+    
 }
