@@ -13,11 +13,22 @@ return [
             'name' => 'slim-app',
             'path' => __DIR__ . '/../logs/app.log',
         ],
-        'db' => [
-            'host' => 'localhost',
-            'user' => 'root',
-            'pwd' => 'root',
-            'dbname' => 'addimension'
+        'doctrine' => [
+            'meta' => [
+                'entity_path' => [
+                    'app/src/Entity'
+                ],
+                'auto_generate_proxies' => true,
+                'proxy_dir' =>  __DIR__.'/../cache/proxies',
+                'cache' => null,
+            ],
+            'connection' => [
+                'driver'   => 'pdo_mysql',
+                'host'     => 'localhost',
+                'dbname'   => 'your-db',
+                'user'     => 'your-user-name',
+                'password' => 'your-password',
+            ]
         ]
-    ],
+    ]
 ];
