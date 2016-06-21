@@ -17,3 +17,10 @@ $app->get('/api/adsurfaces/{id}', 'AdDimension\Controller\AdSurfaceController:fe
 $app->get('/api/adsurfaces/{id}/advert', 'AdDimension\Controller\AdSurfaceController:findAdvert');
 $app->get('/api/adverts', 'AdDimension\Controller\AdvertController:fetch');
 $app->get('/api/adverts/{id}', 'AdDimension\Controller\AdvertController:fetchOne');
+$app->post('/api/impressions','AdDimension\Controller\ImpressionController:post');
+$app->get('/api/impressions/adverts/{id}','AdDimension\Controller\ImpressionController:fetchByAdvertId');
+$app->get('/api/impressions/publishers/{id}','AdDimension\Controller\ImpressionController:fetchByPublisherId');
+$app->post('/api/clicks','AdDimension\Controller\ClickController:post');
+$app->get('/api/clicks/adverts/{id}','AdDimension\Controller\ClickController:fetchByAdvertId');
+$app->get('/api/clicks/publishers/{id}','AdDimension\Controller\ClickController:fetchByPublisherId');
+

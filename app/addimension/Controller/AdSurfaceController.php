@@ -54,8 +54,13 @@ class AdSurfaceController
     public function findAdvert($request, $response, $args) {
         /** @var  \AdDimension\Entity\AdSurface $adSurfaces */
         $adSurfaces = $this->em->getRepository('AdDimension\Entity\AdSurface')->findBy(array('id' => $args['id']))[0];
+        $adverts = null;
 
-        $adverts = $this->em->getRepository('AdDimension\Entity\Advert')->findby(array('dimX'=> $adSurfaces->getDimX(), 'dimY'=>$adSurfaces->getDimY()) );
+        if ($adSurfaces) {
+            $adverts = $this->em->getRepository('AdDimension\Entity\Advert')->findby(array('dimX'=> $adSurfaces->getDimX(), 'dimY'=>$adSurfaces->getDimY()) );
+        } else {
+            return $response->withStatus(404, 'No AdSurface with id '.$args['id']);
+        }
 
         if ($adverts) {
             $num = rand(0, count($adverts)-1);
