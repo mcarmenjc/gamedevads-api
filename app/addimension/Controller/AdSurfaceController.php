@@ -64,8 +64,9 @@ class AdSurfaceController
 
         if ($adverts) {
             $num = rand(0, count($adverts)-1);
-            return $response->withJSON($adverts[$num]);
+            return $response->withHeader('Content-Type', 'application/json;charset=utf-8')->withJSON($adverts[$num]);
         }
+
         return $response->withStatus(404, 'No Advert for this AdSurface '.$args['id']);
     }
 

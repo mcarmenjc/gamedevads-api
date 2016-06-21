@@ -37,6 +37,11 @@ class Click
     public $advertId;
 
     /**
+     * @ORM\Column(type="integer",name="type_of_click")
+     */
+    public $type;
+
+    /**
      * @ORM\Column(type="datetime",name="posted_at")
      */
     public $postedAt;

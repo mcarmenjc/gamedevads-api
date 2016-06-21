@@ -28,6 +28,7 @@ return [
                 'dbname'   => 'addimension',
                 'user'     => 'root',
                 'password' => 'root',
+                'charset'  => 'UTF8'
             ]
         ]
     ]
