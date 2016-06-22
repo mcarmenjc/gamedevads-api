@@ -67,13 +67,13 @@ class ClickController
      */
     public function post($request,$response,$args){
 
-        $data = json_decode($request->getBody()->getContents());
+        $data = $request->getParams();
 
         $click = new Click();
-        $click->setAdSurfaceId($data->adSurfaceId);
-        $click->setPublisherId($data->publisherId);
-        $click->setAdvertId($data->advertId);
-
+        $click->setAdSurfaceId($data['adSurfaceId']);
+        $click->setPublisherId($data['publisherId']);
+        $click->setAdvertId($data['advertId']);
+        $click->setType($data['type']?$data['type']:1);
         $this->em->persist($click);
         $this->em->flush();
 

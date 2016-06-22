@@ -22,27 +22,27 @@ class Impression
     public $id;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer",nullable=true)
      */
     public $publisherId;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer",nullable=true)
      */
     public $adSurfaceId;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer",nullable=true)
      */
     public $advertId;
 
     /**
-     * @ORM\Column(type="integer", name="time_impressed")
+     * @ORM\Column(type="integer", name="time_impressed",nullable=true)
      */
     public $timeImpressed;
 
     /**
-     * @ORM\Column(type="datetime",name="posted_at")
+     * @ORM\Column(type="datetime",name="posted_at",nullable=true )
      */
     public $postedAt;
 

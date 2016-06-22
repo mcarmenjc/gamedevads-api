@@ -68,13 +68,13 @@ class ImpressionController
      */
     public function post($request,$response,$args){
 
-        $data = json_decode($request->getBody()->getContents());
+        $data = $request->getParams();
 
         $impression = new Impression();
-        $impression->setAdSurfaceId($data->adSurfaceId);
-        $impression->setPublisherId($data->publisherId);
-        $impression->setAdvertId($data->advertId);
-        $impression->setTimeImpressed($data->time?$data->time:100);
+        $impression->setAdSurfaceId($data['adSurfaceId']);
+        $impression->setPublisherId($data['publisherId']);
+        $impression->setAdvertId($data['advertId']);
+        $impression->setTimeImpressed($data['time']?$data['time']:100);
 
         $this->em->persist($impression);
         $this->em->flush();

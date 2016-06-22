@@ -22,27 +22,27 @@ class Click
     public $id;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer",nullable=true )
      */
     public $publisherId;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer",nullable=true)
      */
     public $adSurfaceId;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer",nullable=true)
      */
     public $advertId;
 
     /**
-     * @ORM\Column(type="integer",name="type_of_click")
+     * @ORM\Column(type="integer",name="type_of_click",nullable=true)
      */
     public $type;
 
     /**
-     * @ORM\Column(type="datetime",name="posted_at")
+     * @ORM\Column(type="datetime",name="posted_at",nullable=true)
      */
     public $postedAt;
 
@@ -90,6 +90,22 @@ class Click
     /**
      * @return mixed
      */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param mixed $type
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getAdvertId()
     {
         return $this->advertId;
@@ -102,5 +118,7 @@ class Click
     {
         $this->advertId = $advertId;
     }
+
+
 
 }
