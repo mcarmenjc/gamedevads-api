@@ -37,6 +37,11 @@ class Advert
     public $uriAction;
 
     /**
+     * @ORM\Column(type="string", length=500)
+     */
+    public $seName;
+
+    /**
      * @ORM\ManyToOne(targetEntity="User")
      * @ORM\JoinColumn(name="advertiser_id", referencedColumnName="id")
      */
